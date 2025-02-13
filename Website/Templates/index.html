@@ -1,0 +1,10 @@
+<html>
+	<body>
+		<h1>Let's go!!!</h1>
+		<ul>
+		{% for words in text %}
+		<li><a href="/text/{{ words }}">{{ words }}</a></li>
+		{% endfor %}
+		</ul>
+	</body>
+</html>

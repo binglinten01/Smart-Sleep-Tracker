@@ -1,11 +1,15 @@
-import streamlit as st
+from flask import Flask, render_template
 
-st.set_page_config(page_title="Phone Sensor", page_icon="./sensor.png", layout="wide")
+app = Flask(__name__)
 
+@app.route('/')
+def index():
+	arr = ["First thing", "Second things", "Third thing"]
+	return render_template('index.html', text=arr)
 
+@app.route('/text/<words>')
+def text(words):
+	return str(words)
 
-# ----Header Section----
-st.title("%Project Name%")
-st.subheader("This is a subheader.")
-st.write("This is a write.")
-st.write("[This is a hyperlink. >](https://github.com/binglinten01/Smart-Sleep-Tracker)")
+if __name__ == "__main__":
+	app.run(host="0.0.0.0", port=5000)
