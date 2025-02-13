@@ -1,1 +1,1 @@
-# Multiplanary Project assignment
+# Multi-disciplinary project
